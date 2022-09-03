@@ -1,0 +1,10 @@
+[
+  { "idCourse": "1", "name": "Angular", "category": "Front-end" },
+  { "idCourse": "2", "name": "Java", "category": "Back-end" },
+  { "idCourse": "3", "name": "C", "category": "Back-end" },
+  { "idCourse": "4", "name": "React JS", "category": "Front-end" },
+  { "idCourse": "5", "name": "PHP", "category": "Front-end e Back-end" },
+  { "idCourse": "6", "name": "Node JS", "category": "Back-end" },
+  { "idCourse": "7", "name": "Python", "category": "Back-end" },
+  { "idCourse": "8", "name": "C#", "category": "Back-end" }
+]

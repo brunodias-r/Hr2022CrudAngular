@@ -1,0 +1,31 @@
+body{
+  display: flex;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.toolBarTitle{
+  background-color: rgb(4, 150, 254);
+}
+
+.loadingSpinner{
+  padding: 25px;
+  background:rgb(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(4, 150, 254);
+}
+

@@ -1,0 +1,105 @@
+<div *ngIf="courses$ | async as courses; else loading">
+
+  <div class="row">
+    <!-- <div>
+      <input type="text" [(ngModel)]="textSimple">
+      <p>{{textSimple}}</p>
+    </div> -->
+
+    <div class="col-sm-6" *ngIf="courseSelected">
+      <div class="row">
+        <div class="col-6 mr-auto">
+          <span><app-title [title]="'Curso: ' + courseSelected.idCourse"></app-title></span>
+        </div>
+        <div class="col-6 mt-2" style="display: flex; justify-content: end">
+          <button class="btn btn-sm btn-outline-danger" (click)="fechar()">
+            Fechar
+          </button>
+        </div>
+      </div>
+
+      <form [formGroup]="courseForm" (submit)="courseSubmit()">
+        <!-- <div class="form-group">
+          <label for="inputIdCourse">Id do curso</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="idCourse"
+            id="idCourse"
+            placeholder="Número identificador do curso"
+          />
+        </div> -->
+        <div class="form-group">
+          <label for="inputNameCourse">Curso</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            id="name"
+            placeholder="Nome do curso"
+          />
+        </div>
+        <div class="form-group">
+          <hr />
+          <button class="btn btn-sm btn-success" [disabled]="!courseForm.valid">
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div [ngClass]="{ 'col-sm-6': courseSelected, 'col-sm-12': !courseSelected }"    >
+      <app-title [title]="title"></app-title>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Visualizar</th>
+            <th scope="col">Id do curso</th>
+            <th scope="col">Nome</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of courses" style="cursor: pointer">
+            <td>
+              <button type="button" class="btn text-dark btn-sm btn-outline-warning" (click)="courseSelect(course)">
+                Detalhar
+              </button>
+            </td>
+            <td scope="row">{{ course.idCourse }}</td>
+            <td scope="row">{{ course.name }}</td>
+            <td>
+              <div class="btn-group">
+                <button (click)="openModal(template)" type="button" class="btn btn-sm btn-outline-primary">
+                  Turmas
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-danger">
+                  Excluir
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+        <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body">
+    <app-groups></app-groups>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      Fechar
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

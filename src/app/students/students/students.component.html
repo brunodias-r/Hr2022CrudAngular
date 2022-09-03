@@ -1,0 +1,113 @@
+<!-- <mat-card> -->
+<div *ngIf="students$ | async as students; else loading">
+
+  <div class="row">
+    <div class="col-sm-6" *ngIf="studentSelected">
+      <div class="row">
+        <div class="col-6 mr-auto">
+          <span><app-title [title]="'Aluno: ' + studentSelected.idStudent"></app-title></span>
+        </div>
+        <div class="col-6 mt-2" style="display: flex; justify-content: end">
+          <button class="btn btn-sm btn-outline-danger" (click)="fechar()">
+            Fechar
+          </button>
+        </div>
+      </div>
+
+      <form [formGroup]="studentForm" (submit)="studentSubmit()">
+        <!-- <div class="form-group">
+          <label for="inputIdCourse">Id do aluno</label>
+          <input
+            type="text"
+            formControlName="idStudent"
+            class="form-control"
+            id="idCourse"
+            placeholder="Número identificador do aluno"
+          />
+        </div> -->
+        <div class="form-group">
+          <label for="inputNameCourse">Nome do aluno</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="name"
+            placeholder="Nome do aluno"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputNameCourse">Id da Turma</label>
+          <input
+            type="text"
+            formControlName="idGroup"
+            class="form-control"
+            id="idGroup"
+            placeholder="Número identificador do curso"
+          />
+        </div>
+      </form>
+
+      <div class="form-group">
+        <div class="btn btn-sm  btn-success">Salvar</div>
+      </div>
+    </div>
+
+    <div [ngClass]="{ 'col-sm-6': studentSelected, 'col-sm-12': !studentSelected }">
+      <!-- <mat-toolbar class="toolBarTitle"><span><app-title [title]='title'></app-title></span></mat-toolbar> -->
+      <app-title [title]="title"></app-title>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Visualizar</th>
+            <th scope="col">Id do Aluno</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Id da Turma</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students" style="cursor: pointer">
+            <td>
+              <button type="button" (click)="studentSelect(student)" class="btn text-dark btn-sm btn-outline-warning">
+                Detalhar
+              </button>
+            </td>
+            <td scope="row">{{ student.idStudent }}</td>
+            <td scope="row">{{ student.name }}</td>
+            <td scope="row">{{ student.idGroup }}</td>
+            <td>
+              <div class="btn-group">
+                <button type="button" (click)="openModal(template)" class="btn btn-sm btn-outline-primary">
+                  Cursos
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-danger">
+                  Excluir
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body" >
+    <app-courses></app-courses>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      Fechar
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+<!-- </mat-card> -->

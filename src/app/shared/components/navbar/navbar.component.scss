@@ -1,0 +1,23 @@
+#navbarNav{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-group{
+  border: none;
+}
+
+.btn-group:hover{
+  border: none;
+}
+
+nav{
+  background-color: rgb(3, 161, 61);
+  margin-bottom: 1%;
+}
+
+li:hover{
+  font-weight: bolder;
+  background-color: aliceblue;
+  border-radius: 5px;
+}

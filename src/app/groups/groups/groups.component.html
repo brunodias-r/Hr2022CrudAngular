@@ -1,0 +1,136 @@
+<!-- <mat-card> -->
+
+<div *ngIf="groups$ | async as groups; else loading">
+  <!-- <table mat-table [dataSource]="groups" class="table table-hover">>
+
+    <ng-container matColumnDef="idGroup">
+      <th mat-header-cell *matHeaderCellDef class="scope-row">Id da Turma</th>
+      <td mat-cell *matCellDef="let group">{{ group.idGroup }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="scope-row">Nome</th>
+      <td mat-cell *matCellDef="let group">{{ group.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="idCourse">
+      <th mat-header-cell *matHeaderCellDef class="scope-row">Id do Curso</th>
+      <td mat-cell *matCellDef="let group">{{ group.idCourse }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table> -->
+
+  <div class="row">
+    <div class="col-sm-6" *ngIf="groupSelected">
+      <div class="row">
+        <div class="col-6 mr-auto">
+          <span><app-title [title]="'Turma: ' + groupSelected.idGroup"></app-title></span>
+        </div>
+        <div class="col-6 mt-2" style="display: flex; justify-content: end">
+          <button class="btn btn-sm btn-outline-danger" (click)="fechar()">
+            Fechar
+          </button>
+        </div>
+      </div>
+
+      <form [formGroup]="groupForm" (submit)="groupSubmit()">
+        <!-- <div class="form-group">
+          <label for="inputIdCourse">Número da turma</label>
+          <input
+            type="text"
+            formControlName="idGroup"
+            class="form-control"
+            id="group"
+            placeholder="Número identificador da turma"
+          />
+        </div> -->
+        <div class="form-group">
+          <label for="inputNameCourse">Turma</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="form-control"
+            id="name"
+            placeholder="Nome da turma"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputIdCourse">Id do curso</label>
+          <input
+            type="text"
+            formControlName="idCourse"
+            class="form-control"
+            id="idCourse"
+            placeholder="Número identificador do curso"
+          />
+        </div>
+      </form>
+      <div class="form-group">
+        <hr />
+        <button class="btn btn-success" [disabled]="!groupForm.valid">
+          Salvar
+        </button>
+      </div>
+    </div>
+
+    <div [ngClass]="{ 'col-sm-6': groupSelected, 'col-sm-12': !groupSelected }">
+      <!-- <mat-toolbar class="toolBarTitle"><span><app-title [title]='title'></app-title></span></mat-toolbar> -->
+      <app-title [title]="title"></app-title>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Visualizar</th>
+            <th scope="row">Id da Turma</th>
+            <th scope="row">Nome</th>
+            <th scope="row">Id do curso</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let group of groups" style="cursor: pointer">
+            <td>
+              <button type="button" (click)="groupSelect(group)" class="btn text-dark btn-sm btn-outline-warning">
+                Detalhar
+              </button>
+            </td>
+            <td scope="row">{{ group.idGroup }}</td>
+            <td scope="row">{{ group.name }}</td>
+            <td scope="row">{{ group.idCourse }}</td>
+            <td>
+              <div class="btn-group">
+                <button type="button" (click)="openModal(template)" class="btn btn-sm btn-outline-primary">
+                  Alunos
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-danger">
+                  Excluir
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body">
+    <app-students></app-students>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      Fechar
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div class="loadingSpinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+<!-- </mat-card> -->
