@@ -1,0 +1,27 @@
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 30px 0;
+  background-color: #5C1DA2;
+}
+
+.title h3 {
+  padding: 30px 0 30px 0;
+  display: flex;
+  justify-content: center ;
+}
+
+#imageMetaVerso{
+  margin: 0;
+}
+
+.btnEnter {
+  background-color: #f1ef71;
+  color: white;
+  border-radius: 20px;
+  padding: 0 1% 0 1%;
+  border: 0;
+  border-color: #f1ef71;
+  font-size: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

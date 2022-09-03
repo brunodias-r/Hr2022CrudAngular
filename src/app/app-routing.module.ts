@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
+  { path: 'home', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
   { path: 'login', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)

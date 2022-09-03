@@ -1,23 +1,81 @@
-#navbarNav{
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+nav {
+  background-color: #5C1DA2;
+  margin-bottom: 1%;
+  color: white;
+  text-align: center;
+}
+
+nav a{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.part1 {
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.part2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form{
   display: flex;
   justify-content: space-between;
 }
 
-.btn-group{
-  border: none;
+.form button{
+  padding:0;
 }
 
-.btn-group:hover{
-  border: none;
-}
-
-nav{
-  background-color: rgb(3, 161, 61);
+#searchInput{
+  background-color: #5C1DA2;
   margin-bottom: 1%;
+  color: white;
 }
 
-li:hover{
+.btn-group {
+  border: none;
+  color: white;
+  background-color: #f1ef71;
+}
+
+.btn-group:hover {
+  border: none;
+}
+
+li:hover {
   font-weight: bolder;
-  background-color: aliceblue;
   border-radius: 5px;
+}
+
+.btnEnter {
+  background-color: #f1ef71;
+  color: white;
+  border-radius: 20px;
+  padding: 0 1% 0 1%;
+  border: 0;
+  border-color: #f1ef71;
+  font-size: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btnEnter a{
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.btnEnter:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

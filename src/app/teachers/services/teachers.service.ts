@@ -9,8 +9,6 @@ import { Teacher } from '../model/teacher';
 })
 export class TeachersService {
 
-  //private readonly API = '/assets/teachers.json';
-
   public baseUrl = `${environment.MainUrl}/api/Professores`;
 
   constructor(private httpClient: HttpClient) { }

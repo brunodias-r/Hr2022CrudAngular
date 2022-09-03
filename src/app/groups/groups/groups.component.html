@@ -1,27 +1,4 @@
-<!-- <mat-card> -->
-
 <div *ngIf="groups$ | async as groups; else loading">
-  <!-- <table mat-table [dataSource]="groups" class="table table-hover">>
-
-    <ng-container matColumnDef="idGroup">
-      <th mat-header-cell *matHeaderCellDef class="scope-row">Id da Turma</th>
-      <td mat-cell *matCellDef="let group">{{ group.idGroup }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef class="scope-row">Nome</th>
-      <td mat-cell *matCellDef="let group">{{ group.name }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="idCourse">
-      <th mat-header-cell *matHeaderCellDef class="scope-row">Id do Curso</th>
-      <td mat-cell *matCellDef="let group">{{ group.idCourse }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table> -->
-
   <div class="row">
     <div class="col-sm-6" *ngIf="groupSelected">
       <div class="row">
@@ -133,4 +110,3 @@
     <mat-spinner></mat-spinner>
   </div>
 </ng-template>
-<!-- </mat-card> -->

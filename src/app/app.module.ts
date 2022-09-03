@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses/courses.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GroupsComponent } from './groups/groups/groups.component';
+import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './login/login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AppMaterialModule } from './shared/app-material/app-material.module';
@@ -31,6 +32,7 @@ import { TeachersComponent } from './teachers/teachers/teachers.component';
     TeachersComponent,
     TitleComponent,
     LoginComponent,
+    HomeComponent
   ],
   imports: [
     BsDropdownModule,

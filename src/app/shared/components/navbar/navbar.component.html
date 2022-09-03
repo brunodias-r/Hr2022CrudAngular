@@ -8,15 +8,43 @@
   </div>
 </mat-toolbar> -->
 
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
+<!-- <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <div calss="col-7">
+      <a class="navbar-brand" href="#">Aulas Verso</a>
+      <button
+        class="navbar-toggler buttonHome"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Alterna navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recipiente para nickname"
+          aria-label="Recipiente para nickname"
+          aria-describedby="basic-addon2"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2">
+            <a href="#"><img height="40px" width="40px" class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse col-5" id="navbarNav">
+      <a class="navbar-brand" href="#">Cursos Multiverso</a>
+      <button type="button" cursor="active" class="btnEnter">ENTRAR</button>
+
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a routerLink="teachers" routerLinkActive="active" mat-button mat-dialog>Professores</a>
         </li>
@@ -29,8 +57,8 @@
         <li class="nav-item">
           <a routerLink="courses" routerLinkActive="active" mat-button mat-dialog>Cursos</a>
         </li>
-      </ul>
-      <ul class="navbar-nav">
+      </ul> -->
+      <!-- <ul class="navbar-nav">
         <div class="btn-group" dropdown>
           <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle"
                   aria-controls="dropdown-animated">
@@ -42,8 +70,31 @@
             <li role="menuitem"><a class="dropdown-item" href="#">Sair</a></li>
           </ul>
         </div>
-      </ul>
-    </div>
+      </ul> -->
+    <!-- </div>
   </div>
-</nav>
+</nav> -->
 
+<nav class="navbar navbar-expand-lg">
+
+  <div class="col-7 part1">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Aulas Verso</a>
+    <form class="form">
+      <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Pesquisar" id="searchInput">
+      <button class="btn btn-outline-success" type="submit">
+        <a href="#"><img class="search-icon" height="40px" width="40px" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+      </button>
+    </form>
+  </div>
+
+  <div class="col-5 part2">
+    <a class="navbar-brand" href="#">Cursos Multiverso</a>
+    <button type="button" cursor="active" class="btnEnter">
+      <a class="navbar-brand" href="#">LOGIN</a>
+    </button>
+  </div>
+
+</nav>
